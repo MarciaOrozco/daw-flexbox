@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sub.css" />
   </head>
   <body>
     <header class="header-container">
@@ -63,105 +64,120 @@
     </nav>
 
     <main>
-      <div class="main-container">
-        <div class="left-side-content">
-          <div class="side-news-container">
-            <div class="side-news-image-container">
-              <img src="assets/img-side-news.png" alt="" />
+      <form class="subscription" id="signup-form">
+        <h1 id="form-title">Hola</h1>
+        <div class="contenedor">
+          <div class="left-column">
+            <div class="form-group">
+              <label for="fullname">Nombre completo:</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-fullname"></span>
             </div>
-            <div class="side-news-title">
-              El ambientador de Rituals que consigue que mi casa huela siempre a
-              verano (y se vende sin parar)
+            <div class="form-group">
+              <label for="email" email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-password"></span>
+            </div>
+            <div class="form-group">
+              <label for="repeat-password">Repetir contraseña:</label>
+              <input
+                type="password"
+                id="repeat-password"
+                name="repeat-password"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-repeat-password"></span>
+            </div>
+            <div class="form-group">
+              <label for="age">Edad:</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-age"></span>
             </div>
           </div>
-          <div class="side-news-container">
-            <div class="side-news-image-container">
-              <img src="assets/img-side-news2.png" alt="" />
+          <div class="right-column">
+            <div class="form-group">
+              <label for="phone">Teléfono:</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-phone"></span>
             </div>
-            <div class="side-news-title">
-              Convertirse en un experto en moda en una semana: así son los
-              cursos intensivos de la Summer School de Vogue
+            <div class="form-group">
+              <label for="address">Dirección:</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-address"></span>
+            </div>
+            <div class="form-group">
+              <label for="city">Ciudad:</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-city"></span>
+            </div>
+            <div class="form-group">
+              <label for="postal-code">Código Postal:</label>
+              <input
+                type="text"
+                id="postal-code"
+                name="postal-code"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-postal-code"></span>
+            </div>
+            <div class="form-group">
+              <label for="dni">DNI:</label>
+              <input
+                type="text"
+                id="dni"
+                name="dni"
+                class="form-subscription-input"
+              />
+              <span class="error" id="error-dni"></span>
             </div>
           </div>
         </div>
-
-        <div class="main-content">
-          <h3 class="main-news-title">
-            Hailey y Justin Bieber esperan su primer hijo
-          </h3>
-          <p class="main-news-subtitle">
-            La modelo y su marido lo han anunciado hoy a través de Instagram
-          </p>
-          <div class="main-content-image-container">
-            <img src="assets/img-news-principal.png" alt="" />
-          </div>
+        <div class="form-group full-width">
+            <button type="submit" id="submit-btn" class="form-subscription-button">
+            Enviar
+          </button>
         </div>
-
-        <div class="right-side-content">
-          <div class="side-news-container">
-            <div class="side-news-image-container">
-              <img src="assets/img-side-news3.png" alt="" />
-            </div>
-            <div class="side-news-title">
-              Riley Keough, nieta de Elvis Presley, intenta impedir la venta
-              “fraudulenta” de la mansión de Graceland
-            </div>
-          </div>
-          <div class="side-news-container">
-            <div class="side-news-image-container">
-              <img src="assets/img-side-news4.png" alt="" />
-            </div>
-            <div class="side-news-title">
-              Las calas más bonitas de Mallorca: una guía para recorrer la isla
-              de punta a punta
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sub-container-title">LO MAS LEIDO</div>
-      <div class="sub-container">
-        <div class="sub-container-news-items">
-          <div class="sub-container-news">
-            <div class="sub-container-news-img">
-              <img src="assets/sub-container-img.png" alt="" />
-            </div>
-            <div class="sub-container-news-title">
-              Adidas x Wales Bonner, las nuevas zapatillas más buscadas y
-              deseadas del momento
-            </div>
-            <div class="sub-container-news-date">POR MARCIA MAYO 2024</div>
-          </div>
-          <div class="sub-container-news">
-            <div class="sub-container-news-img">
-              <img src="assets/sub-container-img2.png" alt="" />
-            </div>
-            <div class="sub-container-news-title">
-              Tendencias en zapatillas: ¿cuáles son los modelos que más se
-              llevarán en otoño-invierno 2024/2025?
-            </div>
-            <div class="sub-container-news-date">POR MARCIA MAYO 2024</div>
-          </div>
-          <div class="sub-container-news">
-            <div class="sub-container-news-img">
-              <img src="assets/sub-container-img3.png" alt="" />
-            </div>
-            <div class="sub-container-news-title">
-              ¿Y si lo que realmente quiero es trabajar menos?
-            </div>
-            <div class="sub-container-news-date">POR MARCIA MAYO 2024</div>
-          </div>
-          <div class="sub-container-news">
-            <div class="sub-container-news-img">
-              <img src="assets/sub-container-img4.png" alt="" />
-            </div>
-            <div class="sub-container-news-title">
-              Aloe vera: cómo encontrar el más puro y todos sus usos para la
-              piel
-            </div>
-            <div class="sub-container-news-date">POR MARCIA MAYO 2024</div>
-          </div>
-        </div>
-      </div>
+      </form>
     </main>
 
     <footer class="footer-row">
@@ -232,5 +248,6 @@
         </form>
       </div>
     </footer>
+    <script src="./sub.js"></script>
   </body>
 </html>
