@@ -237,11 +237,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // FORM SUBMISSION
   var form = document.querySelector('form[id="signup-form"]');
+  var modal = document.getElementById("modal");
+  var modalMessage = document.getElementById("modal-message");
+  var span = document.getElementsByClassName("close")[0];
+
+  loadFormData();
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    var inputs = form.getElementsByTagName("input");
     var errors = document.querySelectorAll("span.error");
     var allValid = true;
+    var allCompleted = true;
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].value === "") {
+        allCompleted = false;
+        alert("Por favor llenar todos los campos antes de enviar");
+        return;
+      }
+    }
+
     errors.forEach(function (error) {
       if (error.textContent !== "") {
         allValid = false;
@@ -249,9 +266,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (allValid) {
-      alert("Formulario enviado con éxito");
+      var formData = new FormData(form);
+      var object = {};
+
+      formData.forEach((value, key) => {
+        object[key] = value;
+      });
+
+      fetch("https://jsonplaceholder.typicode.com/users", {
+        method: "POST",
+        body: JSON.stringify(object),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then(() => {
+          modalMessage.textContent = "Formulario enviado con éxito";
+          modal.style.display = "block";
+
+          formData.forEach((value, key) => {
+            localStorage.setItem(key, value);
+
+            modalMessage.innerHTML += `<p>${key}: ${value}</p>`;
+          });
+        })
+        .catch((error) => {
+          modalMessage.textContent =
+            "Error al enviar el formulario. Intente nuevamente." + error;
+          modal.style.display = "block";
+        });
     } else {
-      alert("Por favor, corrige los errores en el formulario");
+      modalMessage.textContent =
+        "Error al enviar el formulario. Debe revisar errores.";
+      modal.style.display = "block";
     }
   });
+
+  function loadFormData() {
+    var inputs = form.querySelectorAll("input");
+    inputs.forEach(function (input) {
+      var value = localStorage.getItem(input.name);
+      if (value) {
+        input.value = value;
+      }
+    });
+  }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 });
